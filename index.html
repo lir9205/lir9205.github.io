@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang>
+<html lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
     <!--Setting-->
     <meta charset="UTF-8">
@@ -79,7 +79,7 @@
 <![endif]-->
 
 <body>
-    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner|2|3.jpg)">
     <div class="main-header-box">
         <a class="header-avatar" href="/" title="qingtian">
             <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
@@ -106,7 +106,7 @@
                     <ul class="menu">
                         
                             <li role="presentation" class="text-center">
-                                <a href="/"><i class="fa "></i>Home</a>
+                                <a href="/"><i class="fa "></i>首页</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
@@ -151,7 +151,7 @@
     <div class="post-content">
         <div class="post-head home-post-head">
             <h1 class="post-title">
-                <a href="/2019/06/12/postName/">postName</a>
+                <a href="/2019/06/12/gulp相关/">执行gulp命令报错记录</a>
             </h1>
             <div class="post-meta">  &bull;
                 <time class="post-date" datetime title>
@@ -161,8 +161,10 @@
         </div>
         <p class="brief">
             
-                PostName这是第一篇GitHub博客！
-
+                #Task function must be specified在执行gulp命令时控制台报错：
+Task function must be specified
+解决方法：
+1.使用$ gulp -v 查看gulp的Local ver...
             
         </p>
     </div>
@@ -182,6 +184,8 @@
             <i class="fa fa-tags"></i>
             <span class="tags-meta">
                 
+                    <a class="tag-link" href="/tags/gulp/">gulp</a>
+                
             </span>
         </span>
     
@@ -191,7 +195,67 @@
             </div>
 
             <div class="post-permalink">
-                <a href="/2019/06/12/postName/" class="btn btn-default">Read</a>
+                <a href="/2019/06/12/gulp相关/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/2019/06/12/postName/">npm安装package.json中的模块依赖</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime title>
+                    2019年06月12日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                #package有两种依赖：
+
+dependencies —— 运行依赖，依赖的项该是正常运行该包时所需要的依赖项
+
+devDependencies —— 开发依赖，开发的时候需要的依赖项，像一些进行单元测试之类的包。
+
+
+安装依赖命...
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/npm/">npm</a>
+                
+            </span>
+        </span>
+    
+
+    
+</div>
+            </div>
+
+            <div class="post-permalink">
+                <a href="/2019/06/12/postName/" class="btn btn-default">阅读全文</a>
             </div>
         </footer>
     
@@ -242,7 +306,7 @@
             </div>
 
             <div class="post-permalink">
-                <a href="/2019/06/12/hello-world/" class="btn btn-default">Read</a>
+                <a href="/2019/06/12/hello-world/" class="btn btn-default">阅读全文</a>
             </div>
         </footer>
     
@@ -260,13 +324,13 @@
         
         
     <div class="widget">
-        <h3 class="title">Search</h3>
+        <h3 class="title">搜索</h3>
         <div id="search-form">
             <div id="result-mask" class="hide"></div>
             <div class="search-area">
                 
-                    <input id="search-key" type="search" autocomplete="off" placeholder="Search What？">
-                    <button type="button" class="search-form-submit" id="search-local">localSearch</button>
+                    <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢？">
+                    <button type="button" class="search-form-submit" id="search-local">站内搜索</button>
                 
                 
             </div>
@@ -289,7 +353,7 @@
         
         
     <div class="widget">
-        <h3 class="title">Notification</h3>
+        <h3 class="title">网站公告</h3>
         <div class="notification">
             <p>
     主题下载：<a href="https://github.com/shenliyang/hexo-theme-snippet" title="fork me" target="_blank">Snippet主题</a> <br>
@@ -302,10 +366,10 @@
         
         
     <div class="widget">
-      <h3 class="title">Social</h3> 
+      <h3 class="title">社交</h3> 
         <div class="content social">
             
-	            <a href="//github.com/shenliyang" rel="external nofollow" title="Github" target="_blank">
+	            <a href="//github.com/lir9205" rel="external nofollow" title="Github" target="_blank">
 			    	<i class="git fa fa-git"></i>
 			    </a>
             
@@ -339,18 +403,27 @@
         
         
     <div class="widget">
-        <h3 class="title">Archives</h3>
-        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/"><i class="fa" aria-hidden="true">2019年06月</i></a><span class="archive-list-count">2</span></li></ul>
+        <h3 class="title">归档</h3>
+        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/"><i class="fa" aria-hidden="true">2019年06月</i></a><span class="archive-list-count">3</span></li></ul>
     </div>
 
 
         
         
+  <div class="widget">
+    <h3 class="title">标签云</h3>
+    <div class="content tag-cloud">
+        
+            <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a>
+        
+    </div>
+  </div>
+
 
         
         
     <div class="widget">
-        <h3 class="title">Friends</h3>
+        <h3 class="title">友链</h3>
         <div class="content friends-link">
         
             <a href="https://hexo.io/zh-cn/" class="fa" target="_blank">Hexo官网</a>
