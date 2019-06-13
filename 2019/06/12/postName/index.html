@@ -21,11 +21,10 @@
     <meta name="keywords" content="npm">
 
 
-    <meta name="description" content="#package有两种依赖：
-
+    <meta name="description" content="package有两种依赖
 dependencies —— 运行依赖，依赖的项该是正常运行该包时所需要的依赖项
 
-devDependencies —— 开发依赖，开发的时候需要的依赖项，像一...">
+devDependencies —— 开发依赖，开发的时候需要的依赖项，像一些进行...">
 
 
 
@@ -83,7 +82,7 @@ devDependencies —— 开发依赖，开发的时候需要的依赖项，像一
 <![endif]-->
 
 <body>
-    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner|2|3.jpg)">
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner2.jpg)">
     <div class="main-header-box">
         <a class="header-avatar" href="/" title="qingtian">
             <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
@@ -110,7 +109,7 @@ devDependencies —— 开发依赖，开发的时候需要的依赖项，像一
                     <ul class="menu">
                         
                             <li role="presentation" class="text-center">
-                                <a href="/"><i class="fa "></i>首页</a>
+                                <a href="/"><i class="fa fa-home"></i>首页</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
@@ -180,36 +179,35 @@ devDependencies —— 开发依赖，开发的时候需要的依赖项，像一
     </div>
     
     <div class="post-body post-content">
-        <p>#package有两种依赖：</p>
-<ul>
+        <h1 id="package有两种依赖"><a href="#package有两种依赖" class="headerlink" title="package有两种依赖"></a>package有两种依赖</h1><ul>
 <li><p>dependencies —— 运行依赖，依赖的项该是正常运行该包时所需要的依赖项</p>
 </li>
 <li><p>devDependencies —— 开发依赖，开发的时候需要的依赖项，像一些进行单元测试之类的包。</p>
 </li>
 </ul>
 <h1 id="安装依赖命令"><a href="#安装依赖命令" class="headerlink" title="安装依赖命令"></a>安装依赖命令</h1><p>npm一键安装package.json里的所有依赖文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">只安装package.json里的dependencies（运行依赖）文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
 
-<p>$ npm install –dependencies</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">只安装package.json里的devDependencies（开发依赖）文件</span><br></pre></td></tr></table></figure>
+<p>只安装package.json里的dependencies（运行依赖）文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --dependencies</span><br></pre></td></tr></table></figure>
 
-<p>$ npm install –devDependencies</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 更新依赖包到最新版本</span><br><span class="line"></span><br><span class="line">安装：</span><br></pre></td></tr></table></figure>
+<p>只安装package.json里的devDependencies（开发依赖）文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --devDependencies</span><br></pre></td></tr></table></figure>
 
-<p>$ sudo npm install -g npm-check-updates</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">使用：</span><br><span class="line">检查package.json中依赖包的最新版本：在package.json所在目录执行命令：</span><br></pre></td></tr></table></figure>
+<h1 id="更新依赖包到最新版本"><a href="#更新依赖包到最新版本" class="headerlink" title="更新依赖包到最新版本"></a>更新依赖包到最新版本</h1><p>安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install -g npm-check-updates</span><br></pre></td></tr></table></figure>
 
-<p>$ ncu</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">更新依赖包到最新版本：</span><br></pre></td></tr></table></figure>
+<p>使用：<br>检查package.json中依赖包的最新版本，在package.json所在目录执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ncu</span><br></pre></td></tr></table></figure>
 
-<p>$ ncu -u</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">更新全部依赖包到最新版本(包括当前指定版本范围满足最新版本号的,比如^4.2.0 -&gt; ^4.3.0)：</span><br></pre></td></tr></table></figure>
+<p>更新依赖包到最新版本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ncu -u</span><br></pre></td></tr></table></figure>
 
-<p>$ ncu -a</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">最后再执行</span><br></pre></td></tr></table></figure>
+<p>更新全部依赖包到最新版本(包括当前指定版本范围满足最新版本号的,比如^4.2.0 -&gt; ^4.3.0)：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ncu -a</span><br></pre></td></tr></table></figure>
 
-<p>$ npm install<br>```</p>
-
+<p>最后再执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
     </div>
     
     <div class="post-footer">
@@ -226,9 +224,9 @@ devDependencies —— 开发依赖，开发的时候需要的依赖项，像一
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2019/06/12/gulp相关/" class="pre-post btn btn-default" title="执行gulp命令报错记录">
+        <a href="/2019/06/12/gulp相关/" class="pre-post btn btn-default" title="gulp4.0+ 执行 gulp 命令报错记录">
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">执行gulp命令报错记录</span>
+            <span class="hidden-xs">gulp4.0+ 执行 gulp 命令报错记录</span>
         </a>
     
     
@@ -277,7 +275,7 @@ devDependencies —— 开发依赖，开发的时候需要的依赖项，像一
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装依赖命令"><span class="toc-text">安装依赖命令</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#package有两种依赖"><span class="toc-text">package有两种依赖</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装依赖命令"><span class="toc-text">安装依赖命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#更新依赖包到最新版本"><span class="toc-text">更新依赖包到最新版本</span></a></li></ol>
         
     </div>
 </aside>
