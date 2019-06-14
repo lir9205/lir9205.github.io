@@ -18,13 +18,11 @@
     <link rel="dns-prefetch" href="https://lir9205.github.io">
     <!--SEO-->
 
-    <meta name="keywords" content="npm">
+    <meta name="keywords" content>
 
 
-    <meta name="description" content="package有两种依赖
-dependencies —— 运行依赖，依赖的项该是正常运行该包时所需要的依赖项
-
-devDependencies —— 开发依赖，开发的时候需要的依赖项，像一些进行...">
+    <meta name="description" content="基于hexo+github搭建一个独立博客
+">
 
 
 
@@ -36,7 +34,7 @@ devDependencies —— 开发依赖，开发的时候需要的依赖项，像一
     <!--Title-->
 
 
-<title>npm安装package.json中的模块依赖 | Blog</title>
+<title>vim | Blog</title>
 
 
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
@@ -141,9 +139,9 @@ devDependencies —— 开发依赖，开发的时候需要的依赖项，像一
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="npm安装package.json中的模块依赖">
+        <h1 id="vim">
             
-	            npm安装package.json中的模块依赖
+	            vim
             
         </h1>
         <div class="post-meta">
@@ -159,8 +157,6 @@ devDependencies —— 开发依赖，开发的时候需要的依赖项，像一
             <i class="fa fa-tags"></i>
             <span class="tags-meta">
                 
-                    <a class="tag-link" href="/tags/npm/">npm</a>
-                
             </span>
         </span>
     
@@ -169,7 +165,7 @@ devDependencies —— 开发依赖，开发的时候需要的依赖项，像一
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2019/06/12</span>
+            <span class="date-meta">2019/06/14</span>
         </span>
         
     
@@ -179,35 +175,8 @@ devDependencies —— 开发依赖，开发的时候需要的依赖项，像一
     </div>
     
     <div class="post-body post-content">
-        <h1 id="package有两种依赖"><a href="#package有两种依赖" class="headerlink" title="package有两种依赖"></a>package有两种依赖</h1><ul>
-<li><p>dependencies —— 运行依赖，依赖的项该是正常运行该包时所需要的依赖项</p>
-</li>
-<li><p>devDependencies —— 开发依赖，开发的时候需要的依赖项，像一些进行单元测试之类的包。</p>
-</li>
-</ul>
-<h1 id="安装依赖命令"><a href="#安装依赖命令" class="headerlink" title="安装依赖命令"></a>安装依赖命令</h1><p>npm一键安装package.json里的所有依赖文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+        <p><a href="https://www.cnblogs.com/MuYunyun/p/5927491.html" target="_blank" rel="noopener">基于hexo+github搭建一个独立博客</a></p>
 
-<p>只安装package.json里的dependencies（运行依赖）文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --dependencies</span><br></pre></td></tr></table></figure>
-
-<p>只安装package.json里的devDependencies（开发依赖）文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --devDependencies</span><br></pre></td></tr></table></figure>
-
-<h1 id="更新依赖包到最新版本"><a href="#更新依赖包到最新版本" class="headerlink" title="更新依赖包到最新版本"></a>更新依赖包到最新版本</h1><p>安装：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install -g npm-check-updates</span><br></pre></td></tr></table></figure>
-
-<p>使用：<br>检查package.json中依赖包的最新版本，在package.json所在目录执行命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ncu</span><br></pre></td></tr></table></figure>
-
-<p>更新依赖包到最新版本：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ncu -u</span><br></pre></td></tr></table></figure>
-
-<p>更新全部依赖包到最新版本(包括当前指定版本范围满足最新版本号的,比如^4.2.0 -&gt; ^4.3.0)：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ncu -a</span><br></pre></td></tr></table></figure>
-
-<p>最后再执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
     </div>
     
     <div class="post-footer">
@@ -224,46 +193,14 @@ devDependencies —— 开发依赖，开发的时候需要的依赖项，像一
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2019/06/12/gulp相关/" class="pre-post btn btn-default" title="gulp4.0+ 执行 gulp 命令报错记录">
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">gulp4.0+ 执行 gulp 命令报错记录</span>
-        </a>
     
-    
-        <a href="/2019/06/12/hello-world/" class="next-post btn btn-default" title="Hello World">
+        <a href="/2019/06/12/gulp相关/" class="next-post btn btn-default" title="gulp4.0+ 执行 gulp 命令报错记录">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">Hello World</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">gulp4.0+ 执行 gulp 命令报错记录</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
 
-
-    <div id="comments">
-        
-	
-    <div id="vcomments" class="valine"></div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="/assets/valine.min.js"></script>
-
-    <script>
-        new Valine({
-            av: AV,
-            el: '#vcomments',
-            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
-            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
-            placeholder: '说点什么吧',
-            notify: false,
-            verify: true,
-            avatar: 'mm',
-            meta: 'nick,mail'.split(','),
-            pageSize: '10',
-            path: window.location.pathname,
-            lang: 'zh-CN'.toLowerCase()
-        })
-    </script>
-
-
-    </div>
 
 
 
@@ -275,7 +212,7 @@ devDependencies —— 开发依赖，开发的时候需要的依赖项，像一
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#package有两种依赖"><span class="toc-text">package有两种依赖</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装依赖命令"><span class="toc-text">安装依赖命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#更新依赖包到最新版本"><span class="toc-text">更新依赖包到最新版本</span></a></li></ol>
+            <p>暂无目录</p>
         
     </div>
 </aside>
