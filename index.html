@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Blog">
+<meta property="og:url" content="https://lir9205.github.io/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Blog">
+  
+    <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://lir9205.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-前端tips" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/14/前端tips/" class="article-date">
+  <time datetime="2019-06-14T07:37:01.000Z" itemprop="datePublished">2019-06-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/14/前端tips/">前端tips</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="jquery控制input只能输入数字和两位小数"><a href="#jquery控制input只能输入数字和两位小数" class="headerlink" title="jquery控制input只能输入数字和两位小数"></a>jquery控制input只能输入数字和两位小数</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">num</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">	obj.value = obj.value.replace(<span class="regexp">/[^\d.]/g</span>,<span class="string">""</span>); <span class="comment">//清除"数字"和"."以外的字符</span></span><br><span class="line">	obj.value = obj.value.replace(<span class="regexp">/^\./g</span>,<span class="string">""</span>); <span class="comment">//验证第一个字符是数字</span></span><br><span class="line">	obj.value = obj.value.replace(<span class="regexp">/\.&#123;2,&#125;/g</span>,<span class="string">"."</span>); <span class="comment">//只保留第一个, 清除多余的</span></span><br><span class="line">	obj.value = obj.value.replace(<span class="string">"."</span>,<span class="string">"$#$"</span>).replace(<span class="regexp">/\./g</span>,<span class="string">""</span>).replace(<span class="string">"$#$"</span>,<span class="string">"."</span>);</span><br><span class="line">	obj.value = obj.value.replace(<span class="regexp">/^(\-)*(\d+)\.(\d\d).*$/</span>,<span class="string">'$1$2.$3'</span>); <span class="comment">//只能输入两个小数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>限制只能保留两位小数点</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">onkeyup</span>=<span class="string">"num(this)"</span> <span class="attr">size</span>=<span class="string">"10"</span>/&gt;</span>元</span><br></pre></td></tr></table></figure>
+
+<p>限制只能输入数字</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">onkeyup</span>=<span class="string">'this.value=this.value.replace(/\D/gi,"")'</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>限制只能输入数字、字母和”-“</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">onkeyup</span>=<span class="string">'value=value.replace(/[^A-Za-z0-9\-]+/g,"")'</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://lir9205.github.io/2019/06/14/前端tips/" data-id="cjxl7uru50005uvwz693dj8nq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-vim" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/14/vim/" class="article-date">
+  <time datetime="2019-06-14T07:12:36.000Z" itemprop="datePublished">2019-06-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/14/vim/">vim</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.cnblogs.com/MuYunyun/p/5927491.html" target="_blank" rel="noopener">基于hexo+github搭建一个独立博客</a></p>
+<h1 id="vim退出命令"><a href="#vim退出命令" class="headerlink" title="vim退出命令"></a>vim退出命令</h1><p>注意：这些命令前面都有一个冒号：</p>
+<p>当编辑完文档，准备退出Vi返回到shell时，能够使用以下几种方法之一。</p>
+<h2 id="在命令模式中"><a href="#在命令模式中" class="headerlink" title="在命令模式中"></a>在命令模式中</h2><h3 id="ZZ"><a href="#ZZ" class="headerlink" title=":ZZ"></a>:ZZ</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:ZZ</span><br></pre></td></tr></table></figure>
+
+<p>连按两次大写字母Z，若当前编辑的文档曾被修改过，则Vi保存该文档后退出，返回到shell；若当前编辑的文档没被修改过，则Vi直接退出, 返回到shell。</p>
+<hr>
+<h2 id="在末行模式下"><a href="#在末行模式下" class="headerlink" title="在末行模式下"></a>在末行模式下</h2><h3 id="w"><a href="#w" class="headerlink" title=":w"></a>:w</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:w</span><br></pre></td></tr></table></figure>
+
+<p>Vi保存当前编辑文档，但并不退出，而是继续等待用户输入命令。在使用w命令时，能够再给编辑文档起一个新的文档名。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:w newfile</span><br></pre></td></tr></table></figure>
+
+<p>此时Vi将把当前文档的内容保存到指定的newfile中，而原有文档保持不变。若newfile是个已存在的文档，则Vi在显示窗口的状态行给出提示信息：</p>
+<pre><code>File exists （use ! to override）</code></pre><p>此时，若用户真的希望用文档的当前内容替换newfile中原有内容，可使用命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:w! newfile</span><br></pre></td></tr></table></figure>
+
+<p>否则可选择另外的文档名来保存当前文档。</p>
+<h3 id="q"><a href="#q" class="headerlink" title=":q"></a>:q</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:q</span><br></pre></td></tr></table></figure>
+
+<p>系统退出Vi返回到shell。若在用此命令退出Vi时，编辑文档没有被保存，则Vi在显示窗口的最末行显示如下信息：</p>
+<blockquote>
+<p>No write since last change （use ! to overrides）</p>
+</blockquote>
+<p>提示用户该文档被修改后没有保存，然后Vi并不退出，继续等待用户命令。若用户就是不想保存被修改后的文档而要强行退出Vi时，可使用命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:q!</span><br></pre></td></tr></table></figure>
+
+<p>Vi放弃所作修改而直接退到shell下。</p>
+<h3 id="wq"><a href="#wq" class="headerlink" title=":wq"></a>:wq</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:wq</span><br></pre></td></tr></table></figure>
+
+<p>Vi将先保存文档，然后退出Vi返回到shell。</p>
+<h3 id="x"><a href="#x" class="headerlink" title=":x"></a>:x</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:x</span><br></pre></td></tr></table></figure>
+
+<p>该命令的功能同命令模式下的ZZ命令功能相同。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://lir9205.github.io/2019/06/14/vim/" data-id="cjxl7uru30004uvwzmum19a0e" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-gulp相关" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/12/gulp相关/" class="article-date">
+  <time datetime="2019-06-12T09:05:01.000Z" itemprop="datePublished">2019-06-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/12/gulp相关/">gulp4.0+ 执行 gulp 命令报错记录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-Task-function-must-be-specified"><a href="#1-Task-function-must-be-specified" class="headerlink" title="1. Task function must be specified"></a>1. Task function must be specified</h1><p>在执行 <code>$ gulp</code> 命令时控制台报错：</p>
+<pre><code>Task function must be specified</code></pre><p>解决方法：</p>
+<p>使用<code>$ gulp -v</code> 查看 <i>gulp</i> 的 <i>Local version</i> 版本和 <i>package.json</i> 里面的版本是否相同</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ gulp -v</span><br><span class="line">CLI version: 2.2.0</span><br><span class="line">Local version: 4.0.2</span><br></pre></td></tr></table></figure>
+
+<p><i>package.json</i>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"hexo-site"</span>, </span><br><span class="line">  <span class="string">"version"</span>: <span class="string">"0.0.0"</span>,</span><br><span class="line">  <span class="string">"private"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">"hexo"</span>: &#123;</span><br><span class="line">    <span class="string">"version"</span>: <span class="string">"3.8.0"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="string">"ejs"</span>: <span class="string">"^2.6.1"</span>,</span><br><span class="line">    <span class="string">"hexo"</span>: <span class="string">"^3.8.0"</span>,</span><br><span class="line">    <span class="string">"hexo-abbrlink"</span>: <span class="string">"^2.0.5"</span>,</span><br><span class="line">    <span class="string">"hexo-deployer-git"</span>: <span class="string">"^1.0.0"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-archive"</span>: <span class="string">"^0.1.5"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-category"</span>: <span class="string">"^0.1.3"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-feed"</span>: <span class="string">"^1.2.2"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-index"</span>: <span class="string">"^0.2.1"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-json-content"</span>: <span class="string">"^4.1.3"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-sitemap"</span>: <span class="string">"^1.2.0"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-tag"</span>: <span class="string">"^0.2.0"</span>,</span><br><span class="line">    <span class="string">"hexo-renderer-ejs"</span>: <span class="string">"^0.3.1"</span>,</span><br><span class="line">    <span class="string">"hexo-renderer-marked"</span>: <span class="string">"^1.0.1"</span>,</span><br><span class="line">    <span class="string">"hexo-server"</span>: <span class="string">"^0.3.3"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"devDependencies"</span>: &#123;</span><br><span class="line">    <span class="string">"gulp"</span>: <span class="string">"^4.0.2"</span>,</span><br><span class="line">    <span class="string">"gulp-autoprefixer"</span>: <span class="string">"^6.1.0"</span>,</span><br><span class="line">    <span class="string">"gulp-htmlclean"</span>: <span class="string">"^2.7.22"</span>,</span><br><span class="line">    <span class="string">"gulp-htmlmin"</span>: <span class="string">"^5.0.1"</span>,</span><br><span class="line">    <span class="string">"gulp-jshint"</span>: <span class="string">"^2.1.0"</span>,</span><br><span class="line">    <span class="string">"gulp-less"</span>: <span class="string">"^4.0.1"</span>,</span><br><span class="line">    <span class="string">"gulp-minify-css"</span>: <span class="string">"^1.2.4"</span>,</span><br><span class="line">    <span class="string">"gulp-notify"</span>: <span class="string">"^3.2.0"</span>,</span><br><span class="line">    <span class="string">"gulp-path"</span>: <span class="string">"^4.0.0"</span>,</span><br><span class="line">    <span class="string">"gulp-plumber"</span>: <span class="string">"^1.2.1"</span>,</span><br><span class="line">    <span class="string">"gulp-rename"</span>: <span class="string">"^1.4.0"</span>,</span><br><span class="line">    <span class="string">"gulp-rev-append"</span>: <span class="string">"^0.1.8"</span>,</span><br><span class="line">    <span class="string">"gulp-sequence"</span>: <span class="string">"^1.0.0"</span>,</span><br><span class="line">    <span class="string">"gulp-uglify"</span>: <span class="string">"^3.0.2"</span>,</span><br><span class="line">    <span class="string">"gulp-watch"</span>: <span class="string">"^5.0.1"</span>,</span><br><span class="line">    <span class="string">"jshint"</span>: <span class="string">"^2.10.2"</span>,</span><br><span class="line">    <span class="string">"jshint-stylish"</span>: <span class="string">"^2.2.1"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><i>gulp 3</i> 和 <i>gulp 4</i> 运行方式是不一样的，所以会出现错误。<br><i>gulp 3</i>，如果有一个任务A，B和C的列表，你想在一个序列中运行（确保A在B开始之前完成，而B在C开始之前完成），代码如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'a'</span>, <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">  // Do something.</span><br><span class="line">&#125;);</span><br><span class="line">gulp.task(<span class="string">'b'</span>, [<span class="string">'a'</span>], <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">  // Do some stuff.</span><br><span class="line">&#125;);</span><br><span class="line">gulp.task(<span class="string">'c'</span>, [<span class="string">'b'</span>], <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    // Do some more stuff.</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><i>gulp 4</i>最大的变化就是你不能像以前那样传递一个依赖任务列表。否则会得到以下错误：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">assert.js:42</span><br><span class="line">  throw new errors.AssertionError(&#123;</span><br><span class="line">  ^</span><br><span class="line"></span><br><span class="line">AssertionError [ERR_ASSERTION]: Task <span class="keyword">function</span> must be specified</span><br><span class="line">    at Gulp.set [as _setTask] (/Users/yscredit/Desktop/myBlog/node_modules/_undertaker@1.2.1@undertaker/lib/<span class="built_in">set</span>-task.js:10:3)</span><br><span class="line">    at Gulp.task (/Users/yscredit/Desktop/myBlog/node_modules/_undertaker@1.2.1@undertaker/lib/task.js:13:8)</span><br><span class="line">    at Object.&lt;anonymous&gt; (/Users/yscredit/Desktop/myBlog/themes/hexo-theme-snippet/gulpfile.js:105:10)</span><br><span class="line">    at Module._compile (module.js:652:30)</span><br><span class="line">    at Object.Module._extensions..js (module.js:663:10)</span><br><span class="line">    at Module.load (module.js:565:32)</span><br><span class="line">    at tryModuleLoad (module.js:505:12)</span><br><span class="line">    at Function.Module._load (module.js:497:3)</span><br><span class="line">    at Module.require (module.js:596:17)</span><br><span class="line">    at require (internal/module.js:11:18)</span><br></pre></td></tr></table></figure>
+
+<p>你需要使用 <i>gulp.series</i> 和 <i>gulp.parallel</i>，因为 <i>gulp</i> 任务现在只有两个参数。</p>
+<ul>
+<li><b>gulp.series</b>：按照顺序执行</li>
+<li><b>gulp.paralle</b>：可以并行计算<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'my-tasks'</span>, gulp.series(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">  // Do something after a, b, and c are finished.</span><br><span class="line">&#125;));</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'build'</span>, gulp.parallel(<span class="string">'styles'</span>, <span class="string">'scripts'</span>, <span class="string">'images'</span>, <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">  // Build the website.</span><br><span class="line">&#125;));</span><br><span class="line"></span><br><span class="line">&lt;!-- 或者这样 --&gt;</span><br><span class="line">gulp.task(<span class="string">'my-tasks'</span>, gulp.series(<span class="string">'a'</span>, gulp.parallel(<span class="string">'styles'</span>,<span class="string">'scripts'</span>, <span class="string">'images'</span>), <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">  // Do something after a, b, and c are finished.</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>相关任务必须在被调用之前发生。</p>
+<h1 id="2-The-following-tasks-did-not-complete-default-Did-you-forget-to-signal-async-completion"><a href="#2-The-following-tasks-did-not-complete-default-Did-you-forget-to-signal-async-completion" class="headerlink" title="2. The following tasks did not complete: default,Did you forget to signal async completion?"></a>2. The following tasks did not complete: default,Did you forget to signal async completion?</h1><p>当 <i>gulp</i> 为如下代码的时候：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//  以下代码会执行在node环境下</span><br><span class="line">const gulp = require( <span class="string">"gulp"</span> );</span><br><span class="line"></span><br><span class="line">//  创建一个gulp的任务</span><br><span class="line">gulp.task( <span class="string">"default"</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    console.log( <span class="string">"gulp default task"</span> );</span><br><span class="line">&#125; );</span><br></pre></td></tr></table></figure>
+
+<p>执行 <code>$ gulp</code> 打印：</p>
+<p>  The following tasks did not complete: default, <anonymous><br>Did you forget to signal async completion?</anonymous></p>
+<h3 id="使用-async-和-await-解决"><a href="#使用-async-和-await-解决" class="headerlink" title="使用 async 和 await 解决"></a>使用 <i>async</i> 和 <i>await</i> 解决</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//  以下代码会执行在node环境下</span><br><span class="line">const gulp = require( <span class="string">"gulp"</span> );</span><br><span class="line"></span><br><span class="line">//  创建一个gulp的任务</span><br><span class="line">gulp.task( <span class="string">"default"</span>,async() =&gt; &#123;</span><br><span class="line">    console.log( <span class="string">"gulp default task"</span> );</span><br><span class="line">&#125; );</span><br></pre></td></tr></table></figure>
+
+<h3 id="官方解决办法"><a href="#官方解决办法" class="headerlink" title="官方解决办法"></a>官方解决办法</h3><p>在不使用文件流的情况下，向 <i>task</i> 的函数里传入一个名叫 <i>done</i> 的回调函数，以结束 <i>task</i>，如下代码所示:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//  以下代码会执行在node环境下</span><br><span class="line">const gulp = require( <span class="string">"gulp"</span> );</span><br><span class="line"></span><br><span class="line">//  创建一个gulp的任务</span><br><span class="line">gulp.task( <span class="string">"default"</span>,<span class="keyword">function</span>(<span class="keyword">done</span>)&#123;</span><br><span class="line">    console.log( <span class="string">"gulp default task"</span> );</span><br><span class="line">    <span class="keyword">done</span>();</span><br><span class="line">&#125; );</span><br></pre></td></tr></table></figure>
+
+<p> <i>done</i> 回调函数的作用是在 <i>task</i> 完成时通知 <i>gulp</i> （而不是返回一个流），而 <i>task</i> 里的所有其他功能都纯粹依赖 <i>Node</i> 来实现。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://lir9205.github.io/2019/06/12/gulp相关/" data-id="cjxl7urto0000uvwzge915prm" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-postName" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/12/postName/" class="article-date">
+  <time datetime="2019-06-12T03:35:01.000Z" itemprop="datePublished">2019-06-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/12/postName/">npm安装package.json中的模块依赖</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="package有两种依赖"><a href="#package有两种依赖" class="headerlink" title="package有两种依赖"></a>package有两种依赖</h1><ul>
+<li><p>dependencies —— 运行依赖，依赖的项该是正常运行该包时所需要的依赖项</p>
+</li>
+<li><p>devDependencies —— 开发依赖，开发的时候需要的依赖项，像一些进行单元测试之类的包。</p>
+</li>
+</ul>
+<h1 id="安装依赖命令"><a href="#安装依赖命令" class="headerlink" title="安装依赖命令"></a>安装依赖命令</h1><p>npm一键安装package.json里的所有依赖文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+
+<p>只安装package.json里的dependencies（运行依赖）文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --dependencies</span><br></pre></td></tr></table></figure>
+
+<p>只安装package.json里的devDependencies（开发依赖）文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --devDependencies</span><br></pre></td></tr></table></figure>
+
+<h1 id="更新依赖包到最新版本"><a href="#更新依赖包到最新版本" class="headerlink" title="更新依赖包到最新版本"></a>更新依赖包到最新版本</h1><p>安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install -g npm-check-updates</span><br></pre></td></tr></table></figure>
+
+<p>使用：<br>检查package.json中依赖包的最新版本，在package.json所在目录执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ncu</span><br></pre></td></tr></table></figure>
+
+<p>更新依赖包到最新版本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ncu -u</span><br></pre></td></tr></table></figure>
+
+<p>更新全部依赖包到最新版本(包括当前指定版本范围满足最新版本号的,比如^4.2.0 -&gt; ^4.3.0)：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ncu -a</span><br></pre></td></tr></table></figure>
+
+<p>最后再执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://lir9205.github.io/2019/06/12/postName/" data-id="cjxl7uru00003uvwzoihwieax" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/12/hello-world/" class="article-date">
+  <time datetime="2019-06-12T02:49:40.000Z" itemprop="datePublished">2019-06-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/12/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://lir9205.github.io/2019/06/12/hello-world/" data-id="cjxl7urtv0001uvwz53a0hkq3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/06/14/前端tips/">前端tips</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/14/vim/">vim</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/12/gulp相关/">gulp4.0+ 执行 gulp 命令报错记录</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/12/postName/">npm安装package.json中的模块依赖</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/12/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 qingtian<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

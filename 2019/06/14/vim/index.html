@@ -1,183 +1,91 @@
-<!DOCTYPE HTML>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html>
 <head><meta name="generator" content="Hexo 3.9.0">
-    <!--Setting-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="Blog">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no,email=no,adress=no">
-    <meta name="browsermode" content="application">
-    <meta name="screen-orientation" content="portrait">
-    <meta name="theme-version" content="1.2.3">
-    <meta name="root" content="/">
-    <link rel="dns-prefetch" href="https://lir9205.github.io">
-    <!--SEO-->
+  <meta charset="utf-8">
+  
 
-    <meta name="keywords" content>
-
-
-    <meta name="description" content="基于hexo+github搭建一个独立博客
-vim退出命令注意：这些命令前面都有一个冒号：
-当编辑完文档，准备退出Vi返回到shell时，能够使用以下几种方法之一。
-在命令模式中:ZZ1:ZZ
-...">
-
-
-
-<meta name="robots" content="all">
-<meta name="google" content="all">
-<meta name="googlebot" content="all">
-<meta name="verify" content="all">
-
-    <!--Title-->
-
-
-<title>vim | Blog</title>
-
-
+  
+  <title>vim | Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="基于hexo+github搭建一个独立博客 vim退出命令注意：这些命令前面都有一个冒号： 当编辑完文档，准备退出Vi返回到shell时，能够使用以下几种方法之一。 在命令模式中:ZZ1:ZZ  连按两次大写字母Z，若当前编辑的文档曾被修改过，则Vi保存该文档后退出，返回到shell；若当前编辑的文档没被修改过，则Vi直接退出, 返回到shell。  在末行模式下:w1:w  Vi保存当前编辑文档">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vim">
+<meta property="og:url" content="https://lir9205.github.io/2019/06/14/vim/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="基于hexo+github搭建一个独立博客 vim退出命令注意：这些命令前面都有一个冒号： 当编辑完文档，准备退出Vi返回到shell时，能够使用以下几种方法之一。 在命令模式中:ZZ1:ZZ  连按两次大写字母Z，若当前编辑的文档曾被修改过，则Vi保存该文档后退出，返回到shell；若当前编辑的文档没被修改过，则Vi直接退出, 返回到shell。  在末行模式下:w1:w  Vi保存当前编辑文档">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-02T01:31:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vim">
+<meta name="twitter:description" content="基于hexo+github搭建一个独立博客 vim退出命令注意：这些命令前面都有一个冒号： 当编辑完文档，准备退出Vi返回到shell时，能够使用以下几种方法之一。 在命令模式中:ZZ1:ZZ  连按两次大写字母Z，若当前编辑的文档曾被修改过，则Vi保存该文档后退出，返回到shell；若当前编辑的文档没被修改过，则Vi直接退出, 返回到shell。  在末行模式下:w1:w  Vi保存当前编辑文档">
+  
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
-
-
-    <link rel="icon" href="/favicon.ico">
-
-    
-
-
-
-<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
-<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
-<link rel="stylesheet" href="/css/style.css?rev=@@hash">
-
-
-
-
-    
-	<div class="hide">
-		<script type="text/javascript">
-			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-		</script>
-	</div>
-
-
-
-
-
-
-    
-
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
 </head>
-
 </html>
-<!--[if lte IE 8]>
-<style>
-    html{ font-size: 1em }
-</style>
-<![endif]-->
-<!--[if lte IE 9]>
-<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
-<![endif]-->
-
 <body>
-    <header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
-    <div class="main-header-box">
-        <a class="header-avatar" href="/" title='qingtian'>
-            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
-        </a>
-        <div class="branding">
-        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
-            
-                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
-            
-    	</div>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Blog</a>
+      </h1>
+      
     </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://lir9205.github.io"></form>
+      </div>
+    </div>
+  </div>
 </header>
-    <nav class="main-navigation">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only"></span>
-                        <i class="fa fa-bars"></i>
-                    </span>
-                    <a class="navbar-brand" href="https://lir9205.github.io">Blog</a>
-                </div>
-                <div class="collapse navbar-collapse" id="main-menu">
-                    <ul class="menu">
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/"><i class="fa "></i>首页</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/archives/"><i class="fa "></i>时间轴</a>
-                            </li>
-                        
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
-    <section class="content-wrap">
-        <div class="container">
-            <div class="row">
-                <main class="col-md-8 main-content m-post">
-                    <p id="process"></p>
-<article class="post">
-    <div class="post-head">
-        <h1 id="vim">
-            
-	            vim
-            
-        </h1>
-        <div class="post-meta">
+      <div class="outer">
+        <section id="main"><article id="post-vim" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/14/vim/" class="article-date">
+  <time datetime="2019-06-14T07:12:36.000Z" itemprop="datePublished">2019-06-14</time>
+</a>
     
-        <span class="categories-meta fa-wrap">
-            <i class="fa fa-folder-open-o"></i>
-            
-        </span>
+  </div>
+  <div class="article-inner">
     
-
     
-        <span class="fa-wrap">
-            <i class="fa fa-tags"></i>
-            <span class="tags-meta">
-                
-            </span>
-        </span>
-    
-
-    
+      <header class="article-header">
         
-        <span class="fa-wrap">
-            <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2019/06/14</span>
-        </span>
-        
+  
+    <h1 class="article-title" itemprop="name">
+      vim
+    </h1>
+  
+
+      </header>
     
-</div>
-            
-            
-    </div>
-    
-    <div class="post-body post-content">
+    <div class="article-entry" itemprop="articleBody">
+      
         <p><a href="https://www.cnblogs.com/MuYunyun/p/5927491.html" target="_blank" rel="noopener">基于hexo+github搭建一个独立博客</a></p>
 <h1 id="vim退出命令"><a href="#vim退出命令" class="headerlink" title="vim退出命令"></a>vim退出命令</h1><p>注意：这些命令前面都有一个冒号：</p>
 <p>当编辑完文档，准备退出Vi返回到shell时，能够使用以下几种方法之一。</p>
@@ -212,99 +120,138 @@ vim退出命令注意：这些命令前面都有一个冒号：
 
 <p>该命令的功能同命令模式下的ZZ命令功能相同。</p>
 
+      
     </div>
+    <footer class="article-footer">
+      <a data-url="https://lir9205.github.io/2019/06/14/vim/" data-id="cjxl7uru30004uvwzmum19a0e" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
     
-    <div class="post-footer">
-        <div>
-            
-                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
-            
-        </div>
-        <div>
-            
-        </div>
-    </div>
+<nav id="article-nav">
+  
+    <a href="/2019/06/14/前端tips/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          前端tips
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/06/12/gulp相关/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">gulp4.0+ 执行 gulp 命令报错记录</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
-<div class="article-nav prev-next-wrap clearfix">
+</section>
+        
+          <aside id="sidebar">
+  
     
-        <a href="/2019/06/14/前端tips/" class="pre-post btn btn-default" title='前端tips'>
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">前端tips</span>
-        </a>
+
+  
     
-    
-        <a href="/2019/06/12/gulp相关/" class="next-post btn btn-default" title='gulp4.0+ 执行 gulp 命令报错记录'>
-            <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">gulp4.0+ 执行 gulp 命令报错记录</span><i class="fa fa-angle-right fa-fw"></i>
-        </a>
-    
-</div>
-
-
-
-
-
-
-                </main>
-                
-                    <aside id="article-toc" role="navigation" class="col-md-4">
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
     <div class="widget">
-        <h3 class="title">文章目录</h3>
-        
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vim退出命令"><span class="toc-text">vim退出命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#在命令模式中"><span class="toc-text">在命令模式中</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ZZ"><span class="toc-text">:ZZ</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在末行模式下"><span class="toc-text">在末行模式下</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#w"><span class="toc-text">:w</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#q"><span class="toc-text">:q</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wq"><span class="toc-text">:wq</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#x"><span class="toc-text">:x</span></a></li></ol></li></ol></li></ol>
-        
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li></ul>
     </div>
-</aside>
-
-                
-            </div>
-        </div>
-    </section>
-    <footer class="main-footer">
-    <div class="container">
-        <div class="row">
-        </div>
-    </div>
-</footer>
-
-<a id="back-to-top" class="icon-btn hide">
-	<i class="fa fa-chevron-up"></i>
-</a>
+  </div>
 
 
-
-
-    <div class="copyright">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="busuanzi">
+  
     
-</div>
-
-            </div>
-            <div class="col-sm-12">
-                <span>Copyright &copy; 2017
-                </span> |
-                <span>
-                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
-                </span> |
-                <span>
-                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
-                </span>
-            </div>
-        </div>
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a>
     </div>
-</div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/06/14/前端tips/">前端tips</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/14/vim/">vim</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/12/gulp相关/">gulp4.0+ 执行 gulp 命令报错记录</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/12/postName/">npm安装package.json中的模块依赖</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/12/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 qingtian<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
 
 
 
-
-
-
-
-<script src="/js/app.js?rev=@@hash"></script>
-
+  </div>
 </body>
 </html>
