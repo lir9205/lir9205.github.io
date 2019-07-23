@@ -184,6 +184,27 @@
 
 <p>限制只能输入数字、字母和”-“</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; onkeyup=&apos;value=value.replace(/[^A-Za-z0-9\-]+/g,&quot;&quot;)&apos;/&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="完美解决-ios10-及以上-Safari-无法禁止缩放的问题"><a href="#完美解决-ios10-及以上-Safari-无法禁止缩放的问题" class="headerlink" title="完美解决 ios10 及以上 Safari 无法禁止缩放的问题"></a>完美解决 ios10 及以上 Safari 无法禁止缩放的问题</h1><p>移动端web缩放有两种：</p>
+<ol>
+<li>双击缩放</li>
+<li>双指手势缩放</li>
+</ol>
+<p>在 iOS 10之前，iOS 和 Android 都可以通过一行 meta 标签来禁止页面缩放： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;&quot; name=&quot;viewport&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+<p>但 iOS 10开始，meta 设置在 Safari 内无效了。</p>
+<p>在网上看到一个解决方案：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">window.οnlοad=function () &#123;</span><br><span class="line">    document.addEventListener(&apos;touchstart&apos;,function (event) &#123;</span><br><span class="line">        if(event.touches.length&gt;1)&#123;</span><br><span class="line">            event.preventDefault();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    var lastTouchEnd=0;</span><br><span class="line">    document.addEventListener(&apos;touchend&apos;,function (event) &#123;</span><br><span class="line">        var now=(new Date()).getTime();</span><br><span class="line">        if(now-lastTouchEnd&lt;=300)&#123;</span><br><span class="line">            event.preventDefault();</span><br><span class="line">        &#125;</span><br><span class="line">        lastTouchEnd=now;</span><br><span class="line">    &#125;,false)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>经过测试，这种方法只能禁止双击缩放。只好继续找解决方案了。</p>
+<p>原来在 iOS 里有一组双指手势操作的事件：<code>gesturestart</code>、<code>gesturechange</code>、<code>gestureend</code><br>在上面的 js 方法里加入下面的事件监听：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">document.addEventListener(&apos;gesturestart&apos;, function (event) &#123;</span><br><span class="line">    event.preventDefault();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>既不能双击缩放，也不能双指缩放。</p>
+<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">window.onload = function() &#123;</span><br><span class="line">    // 阻止双击放大</span><br><span class="line">    var lastTouchEnd = 0;</span><br><span class="line">    document.addEventListener(&apos;touchstart&apos;, function(event) &#123;</span><br><span class="line">        if (event.touches.length &gt; 1) &#123;</span><br><span class="line">            event.preventDefault();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    document.addEventListener(&apos;touchend&apos;, function(event) &#123;</span><br><span class="line">        var now = (new Date()).getTime();</span><br><span class="line">        if (now - lastTouchEnd &lt;= 300) &#123;</span><br><span class="line">            event.preventDefault();</span><br><span class="line">        &#125;</span><br><span class="line">        lastTouchEnd = now;</span><br><span class="line">    &#125;, false);</span><br><span class="line"></span><br><span class="line">    // 阻止双指放大</span><br><span class="line">    document.addEventListener(&apos;gesturestart&apos;, function(event) &#123;</span><br><span class="line">        event.preventDefault();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
     </div>
     
     <div class="post-footer">
@@ -199,6 +220,11 @@
 </article>
 
 <div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/07/02/小程序初学笔记/" class="pre-post btn btn-default" title='小程序初学笔记'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">小程序初学笔记</span>
+        </a>
     
     
         <a href="/2019/06/14/vim/" class="next-post btn btn-default" title='vim'>
@@ -219,7 +245,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#jquery控制input只能输入数字和两位小数"><span class="toc-text">jquery控制input只能输入数字和两位小数</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#jquery控制input只能输入数字和两位小数"><span class="toc-text">jquery控制input只能输入数字和两位小数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#完美解决-ios10-及以上-Safari-无法禁止缩放的问题"><span class="toc-text">完美解决 ios10 及以上 Safari 无法禁止缩放的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#完整代码"><span class="toc-text">完整代码</span></a></li></ol></li></ol>
         
     </div>
 </aside>

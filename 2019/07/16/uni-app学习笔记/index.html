@@ -1,0 +1,311 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="李芮">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://lir9205.github.io">
+    <!--SEO-->
+
+    <meta name="keywords" content="vue 小程序 uni-app">
+
+
+    <meta name="description" content="tips1. 禁止蒙版下的页面滚动 若需要禁止蒙版下的页面滚动，可使用 @touchmove.stop.prevent=&quot;moveHandle&quot;，moveHandle 可以用...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>uni-app学习笔记 | 李芮</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="李芮" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='qingtian'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://lir9205.github.io">李芮</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="uni-app学习笔记">
+            
+	            uni-app学习笔记
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/uni-app/">uni-app</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/vue-小程序-uni-app/">vue 小程序 uni-app</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/07/16</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h1><h2 id="1-禁止蒙版下的页面滚动"><a href="#1-禁止蒙版下的页面滚动" class="headerlink" title="1. 禁止蒙版下的页面滚动"></a>1. 禁止蒙版下的页面滚动</h2><p> 若需要禁止蒙版下的页面滚动，可使用 <code>@touchmove.stop.prevent=&quot;moveHandle&quot;</code>，<code>moveHandle</code> 可以用来处理 <code>touchmove</code> 的事件，也可以是一个空函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;view class=&quot;mask&quot; @touchmove.stop.prevent=&quot;moveHandle&quot;&gt;&lt;/view&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-注册全局组件"><a href="#2-注册全局组件" class="headerlink" title="2. 注册全局组件"></a>2. 注册全局组件</h2><p>uni-app 支持配置全局组件，需在 main.js 里进行全局注册，注册后就可在所有页面里使用该组件。</p>
+<p>注意：Vue.component 的第一个参数必须是静态的字符串。</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import pageHead from &apos;./components/page-head.vue&apos;</span><br><span class="line">Vue.component(&apos;page-head&apos;,pageHead)</span><br></pre></td></tr></table></figure>
+
+<p>index.vue 里可以直接使用组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;view&gt;</span><br><span class="line">    &lt;page-head&gt;&lt;/page-head&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-如何获取上个页面传递的数据"><a href="#3-如何获取上个页面传递的数据" class="headerlink" title="3. 如何获取上个页面传递的数据"></a>3. 如何获取上个页面传递的数据</h2><p>在 <code>onLoad</code> 里得到，<code>onLoad</code> 的参数是其他页面打开当前页面所传递的数据。</p>
+<h2 id="4-如何设置全局的数据和全局的方法"><a href="#4-如何设置全局的数据和全局的方法" class="headerlink" title="4. 如何设置全局的数据和全局的方法"></a>4. 如何设置全局的数据和全局的方法</h2><p>uni-app 内置了 vuex ，在app里的使用，可参考hello-uniapp store/index.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">//store.js</span><br><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import Vuex from &apos;vuex&apos;</span><br><span class="line">Vue.use(Vuex)</span><br><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">    state: &#123;...&#125;,</span><br><span class="line">    mutations: &#123;...&#125;,</span><br><span class="line">    actions: &#123;...&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">export default store</span><br><span class="line"></span><br><span class="line">//main.js</span><br><span class="line">...</span><br><span class="line">import store from &apos;./store&apos;</span><br><span class="line">Vue.prototype.$store = store</span><br><span class="line">const app = new Vue(&#123;</span><br><span class="line">    store,...</span><br><span class="line">&#125;)</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">//test.vue 使用时：</span><br><span class="line">import &#123;mapState,mapMutations&#125; from &apos;vuex&apos;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-组件属性设置不生效解决办法"><a href="#5-组件属性设置不生效解决办法" class="headerlink" title="5. 组件属性设置不生效解决办法"></a>5. 组件属性设置不生效解决办法</h2><p>当重复设置某些属性为相同的值时，不会同步到view层。 例如：每次将scroll-view组件的scroll-top属性值设置为0，只有第一次能顺利返回顶部。 这和props的单向数据流特性有关，组件内部scroll-top的实际值改动后，其绑定的属性并不会一同变化。</p>
+<p>解决办法有两种（以scroll-view组件为例）：</p>
+<ul>
+<li>监听scroll事件，记录组件内部变化的值，在设置新值之前先设置为记录的当前值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;scroll-view :scroll-top=&quot;scrollTop&quot; scroll-y=&quot;true&quot; @scroll=&quot;scroll&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            scrollTop: 0,</span><br><span class="line">            old: &#123;</span><br><span class="line">                scrollTop: 0</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        scroll: function(e) &#123;</span><br><span class="line">            this.old.scrollTop = e.detail.scrollTop</span><br><span class="line">        &#125;,</span><br><span class="line">        goTop: function(e) &#123;</span><br><span class="line">            this.scrollTop = this.old.scrollTop</span><br><span class="line">            this.$nextTick(function() &#123;</span><br><span class="line">                this.scrollTop = 0</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>监听scroll事件，获取组件内部变化的值，实时更新其绑定值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;scroll-view :scroll-top=&quot;scrollTop&quot; scroll-y=&quot;true&quot; @scroll=&quot;scroll&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            scrollTop: 0,</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        scroll: function(e) &#123;</span><br><span class="line">            this.scrollTop = e.detail.scrollTop</span><br><span class="line">        &#125;,</span><br><span class="line">        goTop: function(e) &#123;</span><br><span class="line">            this.scrollTop = 0</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第二种解决方式在某些组件可能造成抖动，推荐第一种解决方式。</p>
+<h2 id="6-运行环境判断"><a href="#6-运行环境判断" class="headerlink" title="6. 运行环境判断"></a>6. 运行环境判断</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if (process.env.NODE_ENV === &apos;development&apos;) &#123;</span><br><span class="line">				console.log(&apos;开发环境&apos;)</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				console.log(&apos;生产环境&apos;)</span><br><span class="line">			&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-运行平台判断"><a href="#7-运行平台判断" class="headerlink" title="7. 运行平台判断"></a>7. 运行平台判断</h2><p>平台判断有2种场景，一种是在编译期判断，一种是在运行期判断。</p>
+<h3 id="7-1-编译期判断"><a href="#7-1-编译期判断" class="headerlink" title="7.1 编译期判断"></a>7.1 编译期判断</h3><p>编译期判断，即条件编译，不同平台在编译出包后已经是不同的代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// #ifdef H5</span><br><span class="line">	alert(&apos;只有h5平台才有alert方法&apos;);</span><br><span class="line">// #endif</span><br><span class="line"></span><br><span class="line">   // 如上代码只会编译到H5的发行包里，其他平台的包不会包含如上代码。</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-2-运行期判断"><a href="#7-2-运行期判断" class="headerlink" title="7.2 运行期判断"></a>7.2 运行期判断</h3><p>运行期判断是指代码已经打入包中，仍然需要在运行期判断平台，此时可使用 uni.getSystemInfoSync().platform 判断客户端环境是 Android、iOS 还是小程序开发工具（在百度小程序开发工具、微信小程序开发工具、支付宝小程序开发工具中使用 uni.getSystemInfoSync().platform 返回值均为 devtools）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">switch (uni.getSystemInfoSync().platform) &#123;</span><br><span class="line">	case &apos;android&apos;:</span><br><span class="line">		console.log(&apos;运行在Android上&apos;);</span><br><span class="line">		break;</span><br><span class="line">	case &apos;ios&apos;:</span><br><span class="line">		console.log(&apos;运行在iOS上&apos;);</span><br><span class="line">		break;</span><br><span class="line">	default: //&apos;devtools&apos;</span><br><span class="line">		console.log(&apos;运行在开发者工具上&apos;);</span><br><span class="line">		break;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2019/07/02/小程序初学笔记/" class="next-post btn btn-default" title='小程序初学笔记'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">小程序初学笔记</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#tips"><span class="toc-text">tips</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-禁止蒙版下的页面滚动"><span class="toc-text">1. 禁止蒙版下的页面滚动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-注册全局组件"><span class="toc-text">2. 注册全局组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-如何获取上个页面传递的数据"><span class="toc-text">3. 如何获取上个页面传递的数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-如何设置全局的数据和全局的方法"><span class="toc-text">4. 如何设置全局的数据和全局的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-组件属性设置不生效解决办法"><span class="toc-text">5. 组件属性设置不生效解决办法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-运行环境判断"><span class="toc-text">6. 运行环境判断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-运行平台判断"><span class="toc-text">7. 运行平台判断</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-编译期判断"><span class="toc-text">7.1 编译期判断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-运行期判断"><span class="toc-text">7.2 运行期判断</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
