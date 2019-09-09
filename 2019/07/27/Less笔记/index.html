@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="李芮">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://lir9205.github.io">
+    <!--SEO-->
+
+    <meta name="keywords" content>
+
+
+    <meta name="description" content="函数杂项函数color解析颜色，将表示颜色的字符串变为颜色
+1color(&quot;#aaa&quot;);   =&gt;  #aaa
+
+image-size, imgage-width, ...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>Less笔记 | 李芮</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="李芮" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='qingtian'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://lir9205.github.io">李芮</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Less笔记">
+            
+	            Less笔记
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/07/27</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="杂项函数"><a href="#杂项函数" class="headerlink" title="杂项函数"></a>杂项函数</h2><h3 id="color"><a href="#color" class="headerlink" title="color"></a>color</h3><p>解析颜色，将表示颜色的字符串变为颜色</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">color(&quot;#aaa&quot;);   =&gt;  #aaa</span><br></pre></td></tr></table></figure>
+
+<h3 id="image-size-imgage-width-image-height"><a href="#image-size-imgage-width-image-height" class="headerlink" title="image-size, imgage-width, image-height"></a>image-size, imgage-width, image-height</h3><p>从一个文件获取图片尺寸, 只在node环境有效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">image-size(&quot;imageFile.png&quot;);  =&gt;  10px 10px</span><br><span class="line">image-width(&quot;imageFile.png&quot;);  =&gt;  10px</span><br><span class="line">image-height(&quot;imageFile.png&quot;);  =&gt;  10px</span><br></pre></td></tr></table></figure>
+
+<h3 id="convert"><a href="#convert" class="headerlink" title="convert"></a>convert</h3><p>将数字从一个单位转换成另一个单位<br>兼容的单位有：</p>
+<ul>
+<li>lengths: m, cm, mm, in, pt and pc,</li>
+<li>time: s and ms,</li>
+<li>angle: rad, deg, grad and turn.<br>参数：</li>
+<li>number: a floating point number with units.</li>
+<li>identifier, string or escaped value(转义值): units</li>
+</ul>
+<p>实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">convert(9s, &quot;ms&quot;)     =&gt;  9000ms</span><br><span class="line">convert(14cm, mm)     =&gt;  140mm</span><br><span class="line">convert(8, mm)        =&gt; 8   // incompatible unit types returned unmodified</span><br></pre></td></tr></table></figure>
+
+<h3 id="data-uri"><a href="#data-uri" class="headerlink" title="data-uri"></a>data-uri</h3><p> 如果ieCompat选项打开且资源太大，或者在浏览器中使用该函数，则内联资源并回退到url（）。如果未给出MIME类型，则node使用mime包来确定正确的mime类型。</p>
+<p>参数：</p>
+<ul>
+<li>mimetype  可选。如果没有提供mimetype，data-uri 方法会从文件名后缀猜测 mimetype，文本和svg使用utf-8编码，其他base64编码；<pre><code>如果提供mimetype，如果mimetype参数已以 `;base64` 结尾，那么使用base64编码，例如 `image/jpeg;base64` 使用base64编码，而 `text/html` 编码为utf-8。</code></pre></li>
+<li>URL       内联文件的url</li>
+</ul>
+<p>实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data-uri(&apos;../data/image.jpg&apos;);     						=&gt;  url(&apos;data:image/jpeg;base64,bm90IGFjdHVhbGx5IGEganBlZyBmaWxlCg==&apos;);</span><br><span class="line">data-uri(&apos;image/jpeg;base64&apos;, &apos;../data/image.jpg&apos;);     =&gt;  url(&apos;data:image/jpeg;base64,bm90IGFjdHVhbGx5IGEganBlZyBmaWxlCg==&apos;);</span><br><span class="line">data-uri(&apos;image/svg+xml;charset=UTF-8&apos;, &apos;image.svg&apos;);   =&gt; url(&quot;data:image/svg+xml;charset=UTF-8,%3Csvg%3E%3Ccircle%20r%3D%229%22%2F%3E%3C%2Fsvg%3E&quot;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="default"><a href="#default" class="headerlink" title="default"></a>default</h3><p>只在guard 表达式中有效，如果没有匹配到任何一个 mixin，返回true，否则返回false</p>
+<p>实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.mixin(1)                   &#123;x: 11&#125;</span><br><span class="line">.mixin(2)                   &#123;y: 22&#125;</span><br><span class="line">.mixin(@x) when (default()) &#123;z: @x&#125;</span><br><span class="line"></span><br><span class="line">div &#123;</span><br><span class="line">  .mixin(3);  =&gt; z: 3;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div.special &#123;</span><br><span class="line">  .mixin(1);  =&gt; x: 11;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以在 guard 表达式中使用 default() 的值， 例如 <code>.mixin(@value) when not(default()) {}</code> 表示至少匹配一个 mixin：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.mixin(@value) when (ispixel(@value)) &#123;width: @value&#125;</span><br><span class="line">.mixin(@value) when not(default())    &#123;padding: (@value / 5)&#125;</span><br><span class="line"></span><br><span class="line">div-1 &#123;</span><br><span class="line">  .mixin(100px);  =&gt; &#123; width: 100px; padding: 20px; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div-2 &#123;</span><br><span class="line">  /* ... */</span><br><span class="line">  .mixin(100%);  =&gt; &#123; /* ... */ &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以在同一个或者不同的 guard 表达式中使用多个 default()：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">  .m(@x) when (default()), not(default())    &#123;always: @x&#125;</span><br><span class="line">  .m(@x) when (default()) and not(default()) &#123;never:  @x&#125;</span><br><span class="line"></span><br><span class="line">  .m(1); // OK</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果Less在多个 mixin 定义中使用default()时，监测到潜在的冲突会抛出错误：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">  .m(@x) when (default())    &#123;&#125;</span><br><span class="line">  .m(@x) when not(default()) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  .m(1); // Error</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在上面的例子中，不可能确定每个default（）调用应该返回什么值，因为它们递归地相互依赖。<br>进阶的多个default()用法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.x &#123;</span><br><span class="line">  .m(red)                                    &#123;case-1: darkred&#125;</span><br><span class="line">  .m(blue)                                   &#123;case-2: darkblue&#125;</span><br><span class="line">  .m(@x) when (iscolor(@x)) and (default())  &#123;default-color: @x&#125;</span><br><span class="line">  .m(&apos;foo&apos;)                                  &#123;case-1: I am &apos;foo&apos;&#125;</span><br><span class="line">  .m(&apos;bar&apos;)                                  &#123;case-2: I am &apos;bar&apos;&#125;</span><br><span class="line">  .m(@x) when (isstring(@x)) and (default()) &#123;default-string: and I am the default&#125;</span><br><span class="line"></span><br><span class="line">  &amp;-blue  &#123;.m(blue)&#125;   =&gt; &#123;case-2: darkblue&#125;</span><br><span class="line">  &amp;-green &#123;.m(green)&#125;  =&gt; &#123;default-color: green&#125;</span><br><span class="line">  &amp;-foo   &#123;.m(&apos;foo&apos;)&#125;  =&gt; &#123;case-1: I am &apos;foo&apos;&#125;</span><br><span class="line">  &amp;-baz   &#123;.m(&apos;baz&apos;)&#125;  =&gt; &#123;default-string: and I am the default&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>default 只在 mixin 的 guard 表达式中有效，如果在 mixin 的 guard 表达式外面使用会被解释为普通的css值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">  foo: default();     =&gt; foo: default();</span><br><span class="line">  bar: default(42);	  =&gt; bar: default(42);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="unit"><a href="#unit" class="headerlink" title="unit"></a>unit</h3><p>移除或者改变尺寸单位</p>
+<p>参数：</p>
+<ul>
+<li>dimension: A number, with or without a dimension.</li>
+<li>unit: (Optional) the unit to change to, or if omitted it will remove the unit.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unit(5, px)   =&gt; 5px</span><br><span class="line">unit(5em)     =&gt; 5</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="get-unit"><a href="#get-unit" class="headerlink" title="get-unit"></a>get-unit</h3><p>获取单位</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">get-unit(5px)   =&gt; px</span><br><span class="line">get-unit(5)       =&gt; //nothings</span><br></pre></td></tr></table></figure>
+
+<h3 id="svg-gradient"><a href="#svg-gradient" class="headerlink" title="svg-gradient"></a>svg-gradient</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">  @list: red, green 30%, blue;</span><br><span class="line">  background-image: svg-gradient(to right, @list);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line"></span><br><span class="line">div &#123;</span><br><span class="line">  background-image: svg-gradient(to right, red, green 30%, blue);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">结果：</span><br><span class="line"></span><br><span class="line">div &#123;</span><br><span class="line">  background-image: url(&apos;data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%220%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ff0000%22%2F%3E%3Cstop%20offset%3D%2230%25%22%20stop-color%3D%22%23008000%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230000ff%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/07/30/Mac-OS-查看端口和杀死进程/" class="pre-post btn btn-default" title='Mac OS 查看端口和杀死进程'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Mac OS 查看端口和杀死进程</span>
+        </a>
+    
+    
+        <a href="/2019/07/25/PS笔记/" class="next-post btn btn-default" title='PS笔记'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">PS笔记</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#函数"><span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#杂项函数"><span class="toc-text">杂项函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#color"><span class="toc-text">color</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#image-size-imgage-width-image-height"><span class="toc-text">image-size, imgage-width, image-height</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#convert"><span class="toc-text">convert</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#data-uri"><span class="toc-text">data-uri</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#default"><span class="toc-text">default</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#unit"><span class="toc-text">unit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#get-unit"><span class="toc-text">get-unit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#svg-gradient"><span class="toc-text">svg-gradient</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

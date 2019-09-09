@@ -21,7 +21,7 @@
     <meta name="keywords" content>
 
 
-    <meta name="description" content="jquery控制input只能输入数字和两位小数1234567function num(obj)&#123;	obj.value = obj.value.replace(/[^\d.]/g,&q...">
+    <meta name="description" content="1. jquery控制input只能输入数字和两位小数1234567function num(obj)&#123;	obj.value = obj.value.replace(/[^\d.]/g...">
 
 
 
@@ -174,7 +174,7 @@
     </div>
     
     <div class="post-body post-content">
-        <h1 id="jquery控制input只能输入数字和两位小数"><a href="#jquery控制input只能输入数字和两位小数" class="headerlink" title="jquery控制input只能输入数字和两位小数"></a>jquery控制input只能输入数字和两位小数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function num(obj)&#123;</span><br><span class="line">	obj.value = obj.value.replace(/[^\d.]/g,&quot;&quot;); //清除&quot;数字&quot;和&quot;.&quot;以外的字符</span><br><span class="line">	obj.value = obj.value.replace(/^\./g,&quot;&quot;); //验证第一个字符是数字</span><br><span class="line">	obj.value = obj.value.replace(/\.&#123;2,&#125;/g,&quot;.&quot;); //只保留第一个, 清除多余的</span><br><span class="line">	obj.value = obj.value.replace(&quot;.&quot;,&quot;$#$&quot;).replace(/\./g,&quot;&quot;).replace(&quot;$#$&quot;,&quot;.&quot;);</span><br><span class="line">	obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/,&apos;$1$2.$3&apos;); //只能输入两个小数</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="1-jquery控制input只能输入数字和两位小数"><a href="#1-jquery控制input只能输入数字和两位小数" class="headerlink" title="1. jquery控制input只能输入数字和两位小数"></a>1. jquery控制input只能输入数字和两位小数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function num(obj)&#123;</span><br><span class="line">	obj.value = obj.value.replace(/[^\d.]/g,&quot;&quot;); //清除&quot;数字&quot;和&quot;.&quot;以外的字符</span><br><span class="line">	obj.value = obj.value.replace(/^\./g,&quot;&quot;); //验证第一个字符是数字</span><br><span class="line">	obj.value = obj.value.replace(/\.&#123;2,&#125;/g,&quot;.&quot;); //只保留第一个, 清除多余的</span><br><span class="line">	obj.value = obj.value.replace(&quot;.&quot;,&quot;$#$&quot;).replace(/\./g,&quot;&quot;).replace(&quot;$#$&quot;,&quot;.&quot;);</span><br><span class="line">	obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/,&apos;$1$2.$3&apos;); //只能输入两个小数</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>限制只能保留两位小数点</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; onkeyup=&quot;num(this)&quot; size=&quot;10&quot;/&gt;元</span><br></pre></td></tr></table></figure>
@@ -185,7 +185,7 @@
 <p>限制只能输入数字、字母和”-“</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; onkeyup=&apos;value=value.replace(/[^A-Za-z0-9\-]+/g,&quot;&quot;)&apos;/&gt;</span><br></pre></td></tr></table></figure>
 
-<h1 id="完美解决-ios10-及以上-Safari-无法禁止缩放的问题"><a href="#完美解决-ios10-及以上-Safari-无法禁止缩放的问题" class="headerlink" title="完美解决 ios10 及以上 Safari 无法禁止缩放的问题"></a>完美解决 ios10 及以上 Safari 无法禁止缩放的问题</h1><p>移动端web缩放有两种：</p>
+<h1 id="2-完美解决-ios10-及以上-Safari-无法禁止缩放的问题"><a href="#2-完美解决-ios10-及以上-Safari-无法禁止缩放的问题" class="headerlink" title="2. 完美解决 ios10 及以上 Safari 无法禁止缩放的问题"></a>2. 完美解决 ios10 及以上 Safari 无法禁止缩放的问题</h1><p>移动端web缩放有两种：</p>
 <ol>
 <li>双击缩放</li>
 <li>双指手势缩放</li>
@@ -245,7 +245,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#jquery控制input只能输入数字和两位小数"><span class="toc-text">jquery控制input只能输入数字和两位小数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#完美解决-ios10-及以上-Safari-无法禁止缩放的问题"><span class="toc-text">完美解决 ios10 及以上 Safari 无法禁止缩放的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#完整代码"><span class="toc-text">完整代码</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-jquery控制input只能输入数字和两位小数"><span class="toc-text">1. jquery控制input只能输入数字和两位小数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-完美解决-ios10-及以上-Safari-无法禁止缩放的问题"><span class="toc-text">2. 完美解决 ios10 及以上 Safari 无法禁止缩放的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#完整代码"><span class="toc-text">完整代码</span></a></li></ol></li></ol>
         
     </div>
 </aside>

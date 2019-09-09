@@ -21,14 +21,11 @@
     <meta name="keywords" content>
 
 
-    <meta name="description" content="#geoJSON 获取地址
+    <meta name="description" content="
+SecurityConfig.java
 
-地图选择器
-geojson.io 可以通过绘制范围生成geojson数据
-shp文件在线转geojson
-
-#博客
-基于hexo+github搭建一个独立博客htt...">
+添加http授权请求
+1234567891011121314151617181920212223@Overrideprotected void con...">
 
 
 
@@ -40,7 +37,7 @@ shp文件在线转geojson
     <!--Title-->
 
 
-<title>小程序初学笔记 | 李芮</title>
+<title>跨端页面跳转后台配置 | 李芮</title>
 
 
     <link rel="alternate" href="/atom.xml" title="李芮" type="application/atom+xml">
@@ -145,9 +142,9 @@ shp文件在线转geojson
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="小程序初学笔记">
+        <h1 id="跨端页面跳转后台配置">
             
-	            小程序初学笔记
+	            跨端页面跳转后台配置
             
         </h1>
         <div class="post-meta">
@@ -171,7 +168,7 @@ shp文件在线转geojson
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2019/07/02</span>
+            <span class="date-meta">2019/08/22</span>
         </span>
         
     
@@ -181,16 +178,16 @@ shp文件在线转geojson
     </div>
     
     <div class="post-body post-content">
-        <p>#geoJSON 获取地址</p>
-<ol>
-<li><a href="http://datav.aliyun.com/tools/atlas/#&lat=33.521903996156105&lng=104.29849999999999&zoom=4" target="_blank" rel="noopener">地图选择器</a></li>
-<li><a href="http://geojson.io/#map=11/30.2282/119.6092" target="_blank" rel="noopener">geojson.io</a> 可以通过绘制范围生成geojson数据</li>
-<li><a href="https://mapshaper.org/" target="_blank" rel="noopener">shp文件在线转geojson</a></li>
+        <ol>
+<li>SecurityConfig.java</li>
 </ol>
-<p>#博客</p>
-<h3 id="基于hexo-github搭建一个独立博客"><a href="#基于hexo-github搭建一个独立博客" class="headerlink" title="基于hexo+github搭建一个独立博客"></a>基于hexo+github搭建一个独立博客</h3><p><a href="https://www.cnblogs.com/MuYunyun/p/5927491.html" target="_blank" rel="noopener">https://www.cnblogs.com/MuYunyun/p/5927491.html</a></p>
-<p><a href="https://app.yinxiang.com/fx/ace81c91-5174-404f-a1b7-90ef441f3afc" target="_blank" rel="noopener">https://app.yinxiang.com/fx/ace81c91-5174-404f-a1b7-90ef441f3afc</a></p>
+<p>添加http授权请求</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">protected void configure(HttpSecurity http) throws Exception &#123;</span><br><span class="line">	http.csrf().disable();</span><br><span class="line"></span><br><span class="line">	// 基于token，所以不需要session</span><br><span class="line">	http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);</span><br><span class="line"></span><br><span class="line">	http.authorizeRequests()</span><br><span class="line">			.antMatchers(&quot;/&quot;, &quot;/login.html&quot;,&quot;/h5/prelogin.html&quot;, &quot;/h5/error.html&quot;,&quot;/admin/pages/**&quot;, &quot;/admin/css/**&quot;, &quot;/admin/fonts/**&quot;, &quot;/admin/img/**&quot;,</span><br><span class="line">					&quot;/admin/js/**&quot;, &quot;/admin/layui/**&quot;, &quot;/user/login&quot;, &quot;/user/mobile&quot;,&quot;/user/logout&quot;, &quot;/*.css&quot;, &quot;/static/**&quot;, &quot;/*.ico&quot;, &quot;/druid/**&quot;,&quot;/public/**&quot;,</span><br><span class="line">					&quot;/plugins/**&quot;,&quot;/gov/**&quot;,&quot;/dimension/**&quot;,&quot;/h5/**&quot;,&quot;/ent/**&quot;,&quot;/register/**&quot;,&quot;/opensz/**&quot;,&quot;/JavaLegalWebDemo/**&quot;,&quot;/api/policyRead/**&quot;,&quot;/api/policyService/**&quot;,&quot;/app/ding/**&quot;,&quot;/api/projectDeclare/**&quot;,&quot;/api/policyApproval/**&quot;)</span><br><span class="line">			.permitAll().anyRequest().authenticated();</span><br><span class="line">	http.addFilterBefore(tokenFilter, UsernamePasswordAuthenticationFilter.class)   //在认证账户密码之前认真验证码</span><br><span class="line">			.apply(mobileAuthenticationSecurityConfig)</span><br><span class="line">			.and()</span><br><span class="line">			.formLogin().loginPage(&quot;/login.html&quot;).loginProcessingUrl(&quot;/user/login&quot;)</span><br><span class="line">			.successHandler(authenticationSuccessHandler).failureHandler(authenticationFailureHandler).and()</span><br><span class="line">			.exceptionHandling().authenticationEntryPoint(authenticationEntryPoint);</span><br><span class="line">	http.logout().logoutUrl(&quot;/user/logout&quot;).logoutSuccessHandler(logoutSuccessHandler);</span><br><span class="line">	// 解决不允许显示在iframe的问题</span><br><span class="line">	http.headers().frameOptions().disable();</span><br><span class="line">	http.headers().cacheControl();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<ol start="2">
+<li>WebMvcConfig.java<br>添加资源路径</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">   public void addResourceHandlers(ResourceHandlerRegistry registry) &#123;</span><br><span class="line">       registry.addResourceHandler(&quot;/admin/**&quot;).addResourceLocations(&quot;classpath:/admin/&quot;);</span><br><span class="line">	registry.addResourceHandler(&quot;/gov/**&quot;).addResourceLocations(&quot;classpath:/gov/&quot;);</span><br><span class="line">	registry.addResourceHandler(&quot;/ent/**&quot;).addResourceLocations(&quot;classpath:/ent/&quot;);</span><br><span class="line">	registry.addResourceHandler(&quot;/h5/**&quot;).addResourceLocations(&quot;classpath:/h5/&quot;);</span><br><span class="line">	registry.addResourceHandler(&quot;/plugins/**&quot;).addResourceLocations(&quot;classpath:/plugins/&quot;);</span><br><span class="line">	registry.addResourceHandler(&quot;/dimension/**&quot;).addResourceLocations(&quot;classpath:/dimension/&quot;);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
     </div>
     
     <div class="post-footer">
@@ -207,15 +204,10 @@ shp文件在线转geojson
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2019/07/16/uni-app学习笔记/" class="pre-post btn btn-default" title='uni-app学习笔记'>
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">uni-app学习笔记</span>
-        </a>
     
-    
-        <a href="/2019/06/14/前端tips/" class="next-post btn btn-default" title='前端tips'>
+        <a href="/2019/07/30/Mac-OS-查看端口和杀死进程/" class="next-post btn btn-default" title='Mac OS 查看端口和杀死进程'>
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">前端tips</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">Mac OS 查看端口和杀死进程</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -231,7 +223,7 @@ shp文件在线转geojson
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于hexo-github搭建一个独立博客"><span class="toc-text">基于hexo+github搭建一个独立博客</span></a></li></ol>
+            <p>暂无目录</p>
         
     </div>
 </aside>

@@ -21,7 +21,7 @@
     <meta name="keywords" content>
 
 
-    <meta name="description" content>
+    <meta name="description" content="查看线程1234$ sudo lsof -i:8080COMMAND   PID     USER   FD   TYPE            DEVICE SIZE/OFF NODE NAM...">
 
 
 
@@ -33,7 +33,7 @@
     <!--Title-->
 
 
-<title>标签: gulp | 李芮</title>
+<title>Mac OS 查看端口和杀死进程 | 李芮</title>
 
 
     <link rel="alternate" href="/atom.xml" title="李芮" type="application/atom+xml">
@@ -134,43 +134,81 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <ol class="breadcrumb">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Mac OS 查看端口和杀死进程">
+            
+	            Mac OS 查看端口和杀死进程
+            
+        </h1>
+        <div class="post-meta">
     
-    
-        <li>
-            gulp
-        </li>
-    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            
+        </span>
     
 
-</ol>
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+            </span>
+        </span>
+    
 
-
-    <article class="post">
+    
         
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="/2019/06/12/gulp相关/">gulp4.0+ 执行 gulp 命令报错记录</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime="" title="">
-                        2019年06月12日
-                    </time>
-                </div>
-            </div>
-            <p class="brief">
-                
-                    1. Task function must be specified在执行 $ gulp 命令时控制台报错：
-Task function must be specified解决方法：
-使用$ gulp -v 查看 gulp 的 Loc...
-                
-            </p>
-        </div>
-    </article>
- 
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/07/30</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="查看线程"><a href="#查看线程" class="headerlink" title="查看线程"></a>查看线程</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo lsof -i:8080</span><br><span class="line"></span><br><span class="line">COMMAND   PID     USER   FD   TYPE            DEVICE SIZE/OFF NODE NAME</span><br><span class="line">java    63953 yscredit  190u  IPv6 0x6159f300ad7179b      0t0  TCP *:http-alt (LISTEN)</span><br></pre></td></tr></table></figure>
 
+<h1 id="杀死线程"><a href="#杀死线程" class="headerlink" title="杀死线程"></a>杀死线程</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo kill -9 63953</span><br></pre></td></tr></table></figure>
+
+<p>#mac 下安装node遇见的 问题 Error: No such keg: /usr/local/Cellar/node<br>公司的mac 之前有安装过node ，后来 我又用brew 方式 重建 node 导致各种问题</p>
+<p>用各种 命令 解决了一些问题  但是 我也不清楚 哪个 起作用了　</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">　　brew cleanup </span><br><span class="line"></span><br><span class="line">　　brew link node</span><br><span class="line"></span><br><span class="line">　　brew uninstall node</span><br><span class="line"></span><br><span class="line">　　brew install node</span><br></pre></td></tr></table></figure>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/08/22/跨端页面跳转后台配置/" class="pre-post btn btn-default" title='跨端页面跳转后台配置'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">跨端页面跳转后台配置</span>
+        </a>
+    
+    
+        <a href="/2019/07/27/Less笔记/" class="next-post btn btn-default" title='Less笔记'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Less笔记</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
 
 
 
@@ -179,126 +217,14 @@ Task function must be specified解决方法：
 
                 </main>
                 
-                    
-    <aside class="col-md-4 sidebar">
-        
-        
+                    <aside id="article-toc" role="navigation" class="col-md-4">
     <div class="widget">
-        <h3 class="title">搜索</h3>
-        <div id="search-form">
-            <div id="result-mask" class="hide"></div>
-            <div class="search-area">
-                
-                    <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢？">
-                    <button type="button" class="search-form-submit" id="search-local">站内搜索</button>
-                
-                
-            </div>
-            <div id="result-wrap" class="hide">
-                <div id="search-result"></div>
-            </div>
-            <div class="hide">
-                <template id="search-tpl">
-                    <div class="item">
-                        <a href="/{path}" title="{title}">
-                            <div class="title">{title}</div>
-                            <div class="content">{content}</div>
-                        </a>
-                    </div>
-                </template>
-            </div>
-        </div>
-    </div>
-
+        <h3 class="title">文章目录</h3>
         
-        
-    <div class="widget">
-        <h3 class="title">网站公告</h3>
-        <div class="notification">
-            <p>
-    主题下载：<a href="https://github.com/shenliyang/hexo-theme-snippet" title="fork me" target="_blank">Snippet主题</a> <br/>
-    主题使用：<a href="https://github.com/shenliyang/hexo-theme-snippet/blob/master/README.md#常见问题" title="" target="_blank">常见使用问题</a> <br/>
-    支持主题：<a href="https://github.com/shenliyang/hexo-theme-snippet/stargazers">Star一下</a>
-</p>
-        </div>
-    </div>
-
-        
-        
-    <div class="widget">
-      <h3 class="title">社交</h3> 
-        <div class="content social">
-            
-	            <a href="//github.com/lir9205" rel="external nofollow" title="Github" target="_blank">
-			    	<i class="git fa fa-git"></i>
-			    </a>
-            
-	            <a href="mailto:snippet@91h5.cc" rel="external nofollow" title="邮箱" target="_blank">
-			    	<i class="envelope-o fa fa-envelope-o"></i>
-			    </a>
-            
-	            <a href="/" rel="external nofollow" title="联系QQ" target="_blank">
-			    	<i class="qq fa fa-qq"></i>
-			    </a>
-            
-	            <a href="/" rel="external nofollow" title="微信" target="_blank">
-			    	<i class="weixin fa fa-weixin"></i>
-			    </a>
-            
-	            <a href="/" rel="external nofollow" title="QQ群" target="_blank">
-			    	<i class="users fa fa-users"></i>
-			    </a>
-            
-	            <a href="/atom.xml" rel="external nofollow" title="RSS" target="_blank">
-			    	<i class="feed fa fa-feed"></i>
-			    </a>
-            
-        </div>
-    </div>
-
-
-        
-        
-    <div class="widget">
-        <h3 class="title">分类</h3>
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/uni-app/"><i class="fa" aria-hidden="true">uni-app</i></a><span class="category-list-count">1</span></li></ul>
-    </div>
-
-
-        
-        
-    <div class="widget">
-        <h3 class="title">归档</h3>
-        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/"><i class="fa" aria-hidden="true">2019年08月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/"><i class="fa" aria-hidden="true">2019年07月</i></a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/"><i class="fa" aria-hidden="true">2019年06月</i></a><span class="archive-list-count">5</span></li></ul>
-    </div>
-
-
-        
-        
-  <div class="widget">
-    <h3 class="title">标签云</h3>
-    <div class="content tag-cloud">
-        
-            <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/vue-小程序-uni-app/" style="font-size: 10px;">vue 小程序 uni-app</a>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#查看线程"><span class="toc-text">查看线程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#杀死线程"><span class="toc-text">杀死线程</span></a></li></ol>
         
     </div>
-  </div>
-
-
-        
-        
-    <div class="widget">
-        <h3 class="title">友链</h3>
-        <div class="content friends-link">
-        
-            <a href="https://hexo.io/zh-cn/" class="fa" target="_blank">Hexo官网</a>
-        
-        </div>
-    </div>
-
-
-        
-    </aside>
+</aside>
 
                 
             </div>
@@ -341,8 +267,6 @@ Task function must be specified解决方法：
     </div>
 </div>
 
-
-	<script src="/js/search.js?rev=@@hash"></script>
 
 
 
